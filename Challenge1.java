@@ -28,15 +28,15 @@ public class Challenge1 {
 		}
 	}
 
-	public static Boolean inList(String pais) {
+	public static Boolean inList(String palabra2) {
 
-		List<String> lista = new ArrayList<>(Arrays.asList("colombia", "ecuador", "argentina", "chile", "venezuela", "uruguay"));
+		List<String> lista = new ArrayList<>();
 
 
-		if (lista.contains(pais.toLowerCase())) {
-			return true;
-		} else {
+		if (lista.contains(palabra2)) {
 			return false;
+		} else {
+			return true;
 		}
 
 	}
@@ -49,14 +49,14 @@ public class Challenge1 {
 
 		randomNumbers(palabra);
 
-		System.out.println("Por favor ingrese un pais en suramerica: ");
-		String pais = input.next();
+		System.out.println("Por favor ingrese otra palabra: ");
+		String palabra2 = input.next();
 		input.close();
 
-		if (inList(pais) == true) {
-			System.out.println("True");
-		} else {
+		if (inList(palabra2) == false) {
 			System.out.println("False");
+		} else {
+			System.out.println("True");
 		}
 
 
