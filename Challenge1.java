@@ -4,7 +4,9 @@ import java.util.*;
 
 public class Challenge1 {
 
-	public static void randomNumbers(String palabra) {
+	private static List<String> lista;
+
+	public static String randomNumbers(String palabra) {
 
 		Random random = new Random();
 		int arr[] = new int [8];
@@ -16,7 +18,7 @@ public class Challenge1 {
 			for (int i = 0; i < arr.length; i++) {
 				arr[i] = random.nextInt(10);
 			}
-			System.out.println("54"+Arrays.toString(arr).replaceAll("[ ,\\[\\]]", "") + "\n");
+			return "54"+Arrays.toString(arr).replaceAll("[ ,\\[\\]]", "") + "\n";
 
 			// Valor de entrada "Tipo B".
 		} else {
@@ -24,13 +26,13 @@ public class Challenge1 {
 			for (int i = 0; i < arr.length; i++) {
 				arr[i] = random.nextInt(10);
 			}
-			System.out.println("08"+Arrays.toString(arr).replaceAll("[ ,\\[\\]]", "") + "\n");
+			return "08"+Arrays.toString(arr).replaceAll("[ ,\\[\\]]", "") + "\n";
 		}
 	}
 
-	public static Boolean inList(String palabra2) {
+	public static Boolean inList(String palabra2, List<String> lista) {
 
-		List<String> lista = new ArrayList<>();
+		lista = new ArrayList<>();
 
 
 		if (lista.contains(palabra2)) {
@@ -47,13 +49,14 @@ public class Challenge1 {
 		System.out.println("Por favor ingrese una palabra: ");
 		String palabra = input.next();
 
-		randomNumbers(palabra);
+		String resultado = randomNumbers(palabra);
+		System.out.println(resultado);
 
 		System.out.println("Por favor ingrese otra palabra: ");
 		String palabra2 = input.next();
 		input.close();
 
-		if (inList(palabra2) == false) {
+		if (inList(palabra2, lista) == false) {
 			System.out.println("False");
 		} else {
 			System.out.println("True");
