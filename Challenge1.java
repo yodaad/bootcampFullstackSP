@@ -62,10 +62,6 @@ public class Challenge1 {
 			System.out.println("True");
 		}
 
-
-
-
-
 	}
 
 }
